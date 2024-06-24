@@ -16,36 +16,33 @@ public class Person {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "nombre_completo")
-  private String fullName;
+  @Column(name = "nombre", nullable = false)
+  private String name;
 
-  @Column(name = "apellido")
+  @Column(name = "apellido", nullable = false)
   private String lastName;
 
   @OneToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "id_tipo_documento")
-  private DocumentType documentType;
-
-  @Column(name = "numero_documento")
-  private String documentNumber;
+  @JoinColumn(name = "id_documento", nullable = false)
+  private Document document;
 
   @OneToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "id_ciudad")
+  @JoinColumn(name = "id_ciudad", nullable = false)
   private City city;
 
-  @Column(name = "fecha_nacimiento")
+  @Column(name = "fecha_nacimiento", nullable = false)
   private Date birthDate;
 
-  @Column(name = "email")
+  @Column(name = "email", nullable = false)
   @Email(message = "Email should be valid")
   private String email;
 
-  @Column(name = "telefono")
+  @Column(name = "telefono", nullable = false)
   private String phone;
 
-  @Column(name = "username")
+  @Column(name = "username", nullable = false)
   private String username;
 
-  @Column(name = "password")
+  @Column(name = "password", nullable = false)
   private String password;
 }

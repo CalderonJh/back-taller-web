@@ -8,14 +8,17 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tipos_documento", schema = "personas")
-public class DocumentType {
+@Table(name = "documentos", schema = "personas")
+public class Document {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "nombre")
-  private String name;
+  @Column(name = "tipo", nullable = false)
+  private String type;
+
+  @Column(name = "numero", nullable = false)
+  private String number;
 
   @Column(name = "descripcion")
   private String description;
