@@ -1,0 +1,37 @@
+DROP TABLE IF EXISTS PERSONAS;
+DROP TABLE IF EXISTS CIUDADES;
+DROP TABLE IF EXISTS DOCUMENTOS;
+
+
+CREATE TABLE CIUDADES
+(
+    ID          BIGINT PRIMARY KEY,
+    NOMBRE      VARCHAR(50) NOT NULL,
+    ESTADO      VARCHAR(50) NOT NULL,
+    PAIS        VARCHAR(50) NOT NULL,
+    DESCRIPCION VARCHAR(100),
+    test       VARCHAR(100)
+);
+
+CREATE TABLE DOCUMENTOS
+(
+    ID          BIGINT PRIMARY KEY,
+    TIPO        VARCHAR(50) NOT NULL,
+    NUMERO      VARCHAR(15) NOT NULL,
+    DESCRIPCION VARCHAR(100)
+);
+CREATE TABLE IF NOT EXISTS PERSONAS
+(
+    id               BIGINT PRIMARY KEY,
+    nombre           VARCHAR(100) NOT NULL,
+    apellido         VARCHAR(50)  NOT NULL,
+    id_documento     BIGINT       NOT NULL,
+    id_ciudad        BIGINT       NOT NULL,
+    fecha_nacimiento DATE         NOT NULL,
+    email            VARCHAR(100) NOT NULL,
+    telefono         VARCHAR(20)  NOT NULL,
+    username         VARCHAR(12)  NOT NULL,
+    password         VARCHAR(50)  NOT NULL,
+    CONSTRAINT fk_document FOREIGN KEY (id_documento) REFERENCES DOCUMENTOS (id),
+    CONSTRAINT fk_city FOREIGN KEY (id_ciudad) REFERENCES CIUDADES (id)
+);
