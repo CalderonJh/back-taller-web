@@ -1,6 +1,7 @@
 package org.calderon.tallerweb.dto.person;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import java.util.Date;
@@ -10,6 +11,9 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(
+    name = "PersonPatchDTO",
+    description = "DTO to update a person, you have to define just the fields you want to update")
 public class PersonPatchDTO {
   @NotNull(message = "Id is required for update")
   private Long id;
