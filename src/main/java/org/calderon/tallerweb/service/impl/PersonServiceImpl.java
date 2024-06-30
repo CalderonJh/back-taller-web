@@ -13,15 +13,17 @@ import org.calderon.tallerweb.entity.City;
 import org.calderon.tallerweb.entity.Document;
 import org.calderon.tallerweb.entity.Person;
 import org.calderon.tallerweb.repository.PersonRepository;
+import org.calderon.tallerweb.service.usecase.PersonService;
 import org.calderon.tallerweb.tool.Tools;
 import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor()
-public class PersonServiceImpl {
+@RequiredArgsConstructor
+public class PersonServiceImpl implements PersonService {
   private final PersonRepository personRepository;
 
+  @Override
   public Person save(Person person) {
     validatePerson(person);
     validatePost(person);
@@ -35,11 +37,9 @@ public class PersonServiceImpl {
       throw new ValidationException("Username already exists");
   }
 
+  @Override
   public Person update(PersonPatchDTO dto) {
-    Person person =
-        this.personRepository
-            .findById(dto.getId())
-            .orElseThrow(() -> new EntityNotFoundException("Cannot find person to update"));
+    Person person = getPerson(dto.getId());
     validarPatch(dto, person);
     Tools.copyProperties(dto, person, "city", "document", "id");
     if (dto.getCity() != null) Tools.copyProperties(dto.getCity(), person.getCity(), "id");
@@ -49,7 +49,7 @@ public class PersonServiceImpl {
     return this.personRepository.save(person);
   }
 
-  void validarPatch(PersonPatchDTO dto, Person person) {
+  private void validarPatch(PersonPatchDTO dto, Person person) {
     if (dto.getEmail() != null
         && !dto.getEmail().equalsIgnoreCase(person.getEmail())
         && this.personRepository.existsByEmail(dto.getEmail())) {
@@ -123,21 +123,21 @@ public class PersonServiceImpl {
     if (!matches(PASSWORD, password)) throw new ValidationException("Password is not valid");
   }
 
-  public Person findById(Long id) {
+  @Override
+  public Person getPerson(Long id) {
     return this.personRepository
         .findById(id)
         .orElseThrow(() -> new EntityNotFoundException("Person not found"));
   }
 
-  public List<Person> findAll() {
+  @Override
+  public List<Person> getAll() {
     return this.personRepository.findAll();
   }
 
+  @Override
   public void delete(Long id) {
-    var person =
-        this.personRepository
-            .findById(id)
-            .orElseThrow(() -> new EntityNotFoundException("Person not found"));
+    var person = getPerson(id);
     this.personRepository.delete(person);
   }
 }

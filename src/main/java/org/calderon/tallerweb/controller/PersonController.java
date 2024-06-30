@@ -100,14 +100,14 @@ public class PersonController {
                     schema = @Schema(implementation = PersonDTO.class, name = "PersonDTO")))
       })
   public ResponseEntity<PersonDTO> getPerson(@PathVariable Long id) {
-    var personDB = this.personService.findById(id);
+    var personDB = this.personService.getPerson(id);
     return ResponseEntity.ok(PersonMapper.INSTANCE.toResponseDTO(personDB));
   }
 
   @GetMapping("/all")
   @Operation(
-      summary = "Get all persons",
-      description = "Get all persons information",
+      summary = "Get getAll persons",
+      description = "Get getAll persons information",
       responses = {
         @ApiResponse(
             responseCode = "200",
@@ -118,7 +118,7 @@ public class PersonController {
                     array = @ArraySchema(schema = @Schema(implementation = PersonDTO.class))))
       })
   public ResponseEntity<List<PersonDTO>> getAll() {
-    return ResponseEntity.ok(PersonMapper.INSTANCE.toResponseDTOList(this.personService.findAll()));
+    return ResponseEntity.ok(PersonMapper.INSTANCE.toResponseDTOList(this.personService.getAll()));
   }
 
   @DeleteMapping("/{id}")
