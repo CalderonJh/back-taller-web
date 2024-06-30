@@ -2,7 +2,6 @@ package org.calderon.tallerweb.dto.person;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import java.util.Date;
 import lombok.*;
@@ -11,28 +10,27 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class PersonDTO {
+public class PersonPatchDTO {
+  @NotNull(message = "Id is required for update")
   private Long id;
 
-  @NotBlank private String name;
+  private String name;
 
-  @NotBlank
   @JsonAlias("last_name")
   private String lastName;
 
-  @NotNull @Valid private DocumentDTO document;
+  @Valid private DocumentDTO document;
 
-  @NotNull @Valid private CityDTO city;
+  @Valid private CityDTO city;
 
-  @NotNull
   @JsonAlias("dob")
   private Date birthDate;
 
-  @NotNull private String email;
+  private String email;
 
-  @NotBlank private String phone;
+  private String phone;
 
-  @NotBlank private String username;
+  private String username;
 
-  @NotBlank private String password;
+  private String password;
 }

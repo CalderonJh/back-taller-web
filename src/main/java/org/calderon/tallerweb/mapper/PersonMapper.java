@@ -10,6 +10,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper
 public interface PersonMapper {
   PersonMapper INSTANCE = Mappers.getMapper(PersonMapper.class);
@@ -29,4 +31,6 @@ public interface PersonMapper {
   DocumentDTO toDocumentDTO(Document document);
 
   CityDTO toCityDTO(City city);
+
+  List<PersonDTO> toResponseDTOList(List<Person> all);
 }
