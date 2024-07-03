@@ -32,6 +32,10 @@ public interface Tools {
     calendar.add(Calendar.YEAR, years);
     calendar.add(Calendar.MONTH, months);
     calendar.add(Calendar.DAY_OF_MONTH, days);
+    calendar.add(Calendar.HOUR_OF_DAY, 0);
+    calendar.add(Calendar.MINUTE, 0);
+    calendar.add(Calendar.SECOND, 0);
+    calendar.add(Calendar.MILLISECOND, 0);
     return calendar.getTime();
   }
 }

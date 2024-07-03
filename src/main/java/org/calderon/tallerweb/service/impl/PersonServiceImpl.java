@@ -96,7 +96,7 @@ public class PersonServiceImpl implements PersonService {
   private void validateBirthDate(Date birthDate) {
     if (birthDate == null) throw new ValidationException("Birth date is required");
     Date from = Tools.getRelativeDate(-100, 0, 0);
-    Date to = Tools.getRelativeDate(-12, 0, 0);
+    Date to = Tools.getRelativeDate(-18, 0, 0);
     if (birthDate.before(from) || birthDate.after(to))
       throw new ValidationException("Birth date is not valid");
   }
