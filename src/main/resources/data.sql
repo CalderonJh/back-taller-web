@@ -38,4 +38,5 @@ VALUES
     ('Hiroshi', 'Tanaka', 3, 9, '1993-12-10', 'hiroshi.tanaka@example.com', '543210987', 'htanaka', 'passwordpqr'),
     ('Isabella', 'Silva', 1, 10, '1986-06-30', 'isabella.silva@example.com', '678901234', 'isilva', 'passwordstu'),
     ('Maximilian', 'Schulz', 2, 11, '1982-02-08', 'maximilian.schulz@example.com', '321098765', 'mschulz', 'passwordvwx'),
-    ('Yuki', 'Sato', 3, 12, '1991-10-15', 'yuki.sato@example.com', '876543210', 'ysato', 'passwordyz');
+    ('Yuki', 'Sato', 3, 12, '1991-10-15', 'yuki.sato@example.com', '876543210', 'ysato', 'passwordyz'),
+    ('Jhon', 'Dairo', 3, 12, '1991-10-15', 'jhon.calderon@example.com', '876543210', 'jcalderon', 'passwordyz');
