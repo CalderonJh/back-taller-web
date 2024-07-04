@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS PERSONAS
     fecha_nacimiento DATE         NOT NULL,
     email            VARCHAR(100) NOT NULL,
     telefono         VARCHAR(20)  NOT NULL,
-    username         VARCHAR(12)  NOT NULL,
+    username         VARCHAR(20)  NOT NULL,
     password         VARCHAR(50)  NOT NULL,
     CONSTRAINT fk_document FOREIGN KEY (id_documento) REFERENCES DOCUMENTOS (id),
     CONSTRAINT fk_city FOREIGN KEY (id_ciudad) REFERENCES CIUDADES (id),

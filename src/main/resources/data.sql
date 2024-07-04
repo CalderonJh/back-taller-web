@@ -27,16 +27,16 @@ VALUES
 -- Inserción de datos en la tabla PERSONAS
 INSERT INTO PERSONAS (NOMBRE, APELLIDO, ID_DOCUMENTO, ID_CIUDAD, FECHA_NACIMIENTO, EMAIL, TELEFONO, USERNAME, PASSWORD)
 VALUES
-    ('Juan', 'Pérez', 1, 1, '1990-01-01', 'juan.perez@example.com', '123456789', 'jperez', 'password123'),
-    ('María', 'López', 2, 2, '1985-05-15', 'maria.lopez@example.com', '987654321', 'mlopez', 'password456'),
-    ('Carlos', 'García', 3, 3, '1995-09-30', 'carlos.garcia@example.com', '567123890', 'cgarcia', 'password789'),
-    ('Ana', 'Martínez', 1, 4, '1988-07-20', 'ana.martinez@example.com', '456789012', 'amartinez', 'passwordabc'),
-    ('Luis', 'Rodríguez', 2, 5, '1980-03-12', 'luis.rodriguez@example.com', '654321098', 'lrodriguez', 'passworddef'),
-    ('Elena', 'Fernández', 3, 6, '1992-11-05', 'elena.fernandez@example.com', '789012345', 'efernandez', 'passwordghi'),
-    ('Ahmed', 'Ali', 1, 7, '1987-04-18', 'ahmed.ali@example.com', '890123456', 'aali', 'passwordjkl'),
-    ('Sophie', 'Dubois', 2, 8, '1983-08-25', 'sophie.dubois@example.com', '234567890', 'sdubois', 'passwordmno'),
-    ('Hiroshi', 'Tanaka', 3, 9, '1993-12-10', 'hiroshi.tanaka@example.com', '543210987', 'htanaka', 'passwordpqr'),
-    ('Isabella', 'Silva', 1, 10, '1986-06-30', 'isabella.silva@example.com', '678901234', 'isilva', 'passwordstu'),
-    ('Maximilian', 'Schulz', 2, 11, '1982-02-08', 'maximilian.schulz@example.com', '321098765', 'mschulz', 'passwordvwx'),
-    ('Yuki', 'Sato', 3, 12, '1991-10-15', 'yuki.sato@example.com', '876543210', 'ysato', 'passwordyz'),
-    ('Jhon', 'Dairo', 3, 12, '1991-10-15', 'jhon.calderon@example.com', '876543210', 'jcalderon', 'passwordyz');
+    ('Juan', 'Pérez', 1, 1, '1990-01-01', 'juan.perez@example.com', '123456789', 'jperez', 'Pass:123'),
+    ('María', 'López', 2, 2, '1985-05-15', 'maria.lopez@example.com', '987654321', 'mlopez', 'Pass:456'),
+    ('Carlos', 'García', 3, 3, '1995-09-30', 'carlos.garcia@example.com', '567123890', 'cgarcia', 'Pass:789'),
+    ('Ana', 'Martínez', 1, 4, '1988-07-20', 'ana.martinez@example.com', '456789012', 'amartinez', 'Pass:abc1'),
+    ('Luis', 'Rodríguez', 2, 5, '1980-03-12', 'luis.rodriguez@example.com', '654321098', 'lrodriguez', 'Pass:def2'),
+    ('Elena', 'Fernández', 3, 6, '1992-11-05', 'elena.fernandez@example.com', '789012345', 'efernandez', 'Pass:ghi3'),
+    ('Ahmed', 'Ali', 1, 7, '1987-04-18', 'ahmed.ali@example.com', '890123456', 'aali', 'Pass:jkl4'),
+    ('Sophie', 'Dubois', 2, 8, '1983-08-25', 'sophie.dubois@example.com', '234567890', 'sdubois', 'Pass:mno4'),
+    ('Hiroshi', 'Tanaka', 3, 9, '1993-12-10', 'hiroshi.tanaka@example.com', '543210987', 'htanaka', 'Pass:pqr5'),
+    ('Isabella', 'Silva', 1, 10, '1986-06-30', 'isabella.silva@example.com', '678901234', 'isilva', 'Pass:stu5'),
+    ('Maximilian', 'Schulz', 2, 11, '1982-02-08', 'maximilian.schulz@example.com', '321098765', 'mschulz', 'Pass:vwx2'),
+    ('Yuki', 'Sato', 3, 12, '1991-10-15', 'yuki.sato@example.com', '876543210', 'ysato', 'Pass:yz4'),
+    ('Jhon', 'Dairo', 3, 12, '1991-10-15', 'jhon.calderon@example.com', '876543210', 'jcalderon', 'Pass:yz9');
