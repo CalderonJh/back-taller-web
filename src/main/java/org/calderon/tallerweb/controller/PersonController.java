@@ -25,6 +25,7 @@ public class PersonController {
   private PersonService personService;
 
   @PatchMapping("/update")
+  @CrossOrigin(origins = "http://localhost:4200")
   @Operation(
       summary = "Update person information, Id is required for update",
       requestBody =
@@ -63,6 +64,7 @@ public class PersonController {
   }
 
   @PostMapping("/save")
+  @CrossOrigin(origins = "http://localhost:4200")
   @Operation(
       summary = "Create a new person",
       description = "Create a new person with the information provided",
@@ -88,6 +90,7 @@ public class PersonController {
   }
 
   @GetMapping("/{id}")
+  @CrossOrigin(origins = "http://localhost:4200")
   @Operation(
       summary = "Get person information",
       description = "Get person information by id",
@@ -106,6 +109,7 @@ public class PersonController {
   }
 
   @GetMapping("/all")
+  @CrossOrigin(origins = "http://localhost:4200")
   @Operation(
       summary = "Get getAll persons",
       description = "Get getAll persons information",
@@ -123,6 +127,7 @@ public class PersonController {
   }
 
   @DeleteMapping("/delete/{id}")
+  @CrossOrigin(origins = "http://localhost:4200")
   @Operation(
       summary = "Delete person",
       description = "Delete person by id",
