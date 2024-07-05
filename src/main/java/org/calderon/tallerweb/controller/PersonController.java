@@ -19,7 +19,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("person")
 @Tag(name = "Person", description = "Endpoints to manage persons information")
 public class PersonController {
   private PersonService personService;
@@ -126,7 +126,7 @@ public class PersonController {
     return ResponseEntity.ok(PersonMapper.INSTANCE.toResponseDTOList(this.personService.getAll()));
   }
 
-  @DeleteMapping("/{id}")
+  @DeleteMapping("/delete/{id}")
   @CrossOrigin(origins = "http://localhost:4200")
   @Operation(
       summary = "Delete person",
