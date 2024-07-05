@@ -38,7 +38,7 @@ public class PersonDTO {
 
   @NotNull
   @JsonAlias("dob")
-  @Schema(description = "Person birth date", name = "dob", example = "2001-12-19")
+  @Schema(description = "Person birth date", name = "dob", example = "2000-07-04T00:00:00.000Z")
   private Date birthDate;
 
   @Schema(description = "Person email", example = "jhon@email.com")
